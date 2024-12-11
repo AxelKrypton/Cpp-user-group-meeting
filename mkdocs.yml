@@ -1,0 +1,83 @@
+#===================================================
+#
+#    Copyright (c) 2024
+#      Alessandro Sciarra <sciarra@itp.uni-frankfurt.de>
+#
+#    GNU General Public License (GPLv3 or later)
+#
+#===================================================
+
+site_name: C++ user group meetings
+copyright: Copyright &copy; 2024 - Alessandro Sciarra
+
+repo_url: https://github.com/AxelKrypton/Cpp-user-group-meeting
+repo_name: Repository
+site_url: https://axelkrypton.github.io/Cpp-user-group-meeting/  # Trailing slash is recommended
+
+nav:
+  - Overview: index.md
+  - Calendar:
+    - 2024: 2024.md
+    - 2025: 2025.md
+
+
+markdown_extensions: # Just in alphabetical order, checkout reference to know what is for what
+  - admonition
+  - attr_list
+  - md_in_html
+  - footnotes
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - tables
+
+theme:
+  name: material
+  favicon: images/favicon.svg
+  font:
+    text: Fenix
+    code: Courier Prime
+  icon:
+    repo: fontawesome/brands/github
+    logo: material/code-braces-box
+  features:
+    - content.code.annotate
+    - content.code.copy
+    - navigation.expand
+    - navigation.top
+    - navigation.tracking
+  palette:
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/link
+        name: Switch to light mode
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: red
+      toggle:
+        icon: material/white-balance-sunny
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: yellow
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
