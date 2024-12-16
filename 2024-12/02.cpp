@@ -1,3 +1,14 @@
+/*
+ *===================================================
+ *
+ *    Copyright (c) 2024
+ *      Alessandro Sciarra
+ *
+ *    GNU General Public License (GPLv3 or later)
+ *
+ *===================================================
+ */
+
 #include <iomanip>
 #include <iostream>
 #include <string_view>

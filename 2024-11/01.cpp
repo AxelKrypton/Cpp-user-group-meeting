@@ -1,3 +1,14 @@
+/*
+ *===================================================
+ *
+ *    Copyright (c) 2024
+ *      Alessandro Sciarra
+ *
+ *    GNU General Public License (GPLv3 or later)
+ *
+ *===================================================
+ */
+
 #include <iostream>
 #include <string_view>
 #include <vector>
@@ -51,7 +62,7 @@ struct PlayWithMe {
               << "  s = \"" << s << "\"\n";
   }
 
-private:
+ private:
   int N{42};
   double* ptr{nullptr};
   std::string s{"Hi"};
@@ -114,9 +125,9 @@ int main() {
   // (3): How is it better to declare the object: p VS p() VS p{}
   //      How to avoid such a headache? -> C.48 and C.49
   {
-    // PlayWithMe p{}, p2{};
-    // p.print();
-    // p2.print();
+      // PlayWithMe p{}, p2{};
+      // p.print();
+      // p2.print();
   }
 
   // (4): What happens to the following line when declaring e.g. a ctor?
