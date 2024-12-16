@@ -16,6 +16,7 @@ Feel free to bring your questions on the subject with you and to propose topics 
 The discussion will be ideally driven by questions and by participants.
 Format adjustments might be done according to participants wishes.
 
+
 ## Important information
 
 This series of meetings is offered in the context of the [CRC-TR211](https://itp.uni-frankfurt.de/~strongmatter/) collaboration and, in particular, by the Z02 project.
@@ -28,12 +29,18 @@ Topics will be chosen on the way and according to attendees' needs.
  - **Moderator:** Alessandro Sciarra
  - **Why should I join?** There might be cookies :cookie:
 
+
 ## Meetings announcements
 
 Every meeting will be announced roughly one week in advance through the CRC mailing list.
-At the moment people will be asked to spread out the information about the event to other interested people[^1].
 
-[^1]: A possible dedicated mailing list is under consideration and information about this will follow.
+!!! info "A dedicated mailing list"
+
+    If you are not on such a list and still wish to receive messages about the user group meetings, consider to register to [the dedicated mailing list of the meetings](https://lists.itp.uni-frankfurt.de/postorius/lists/cpp-ugm.lists.itp.uni-frankfurt.de/).
+    You can do this as a guest without an account.
+    In any case, you will need to first confirm the subscription yourself using a link that will be emailed to the registered address and, then, the administrator of the list will need to approve the subscription.
+    Therefore, please, **prefer using an institutional email address** as suspect subscriptions will be rejected.
+
 
 ## Meetings snippet and material
 
@@ -42,6 +49,7 @@ The result of such a "group programming" will be uploaded into the repository un
 This is not meant as Holy Grail but simply as starting point for further experimenting. :wink:
 
 [^2]: You can reach it by clicking on the &nbsp;:simple-github: `Repository`&nbsp; button on the right of the bar at the top.
+
 
 ## Utilities
 

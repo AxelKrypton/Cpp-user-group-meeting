@@ -35,8 +35,9 @@
 202*/*
 !*.cpp
 
-# macOS temporary files
+# OS temporary files
 .DS_Store
+.vscode
 
 # Ignore locally built website
 site/
