@@ -9,6 +9,7 @@
  *===================================================
  */
 
+#include <algorithm>
 #include <iomanip>
 #include <iostream>
 #include <string_view>
@@ -68,15 +69,45 @@ void print_uref_type(T&& param) {
   print(std::forward<T>(param));
 }
 
+class Container {
+ public:
+  Container(std::vector<int> v) : vec{std::move(v)} {}
+  void print() { std::cout << "vec[0] =  " << vec[0] << "\n"; }
+
+ private:
+  std::vector<int> vec{};
+};
+
+void consume_v(std::vector<int> v) {
+  Container c{std::move(v)};
+  c.print();
+}
+
 int main() {
   // (1): What do you expect?
   {
     std::cout << "print_rref_type(123):\n";
     print_rref_type(123);
-    int N{42};
-    std::cout << "\nprint_uref_type(N):\n";
-    print_uref_type(N);
-    std::cout << "\nprint_uref_type(666):\n";
-    print_uref_type(666);
+    int value = 222;
+    std::cout << "print_rref_type(value):\n";
+    print_rref_type(std::move(value));
+    // int N{42};
+    // std::cout << "\nprint_uref_type(N):\n";
+    // print_uref_type(N);
+    // std::cout << "\nprint_uref_type(666):\n";
+    // print_uref_type(666);
+  }
+
+  // (2): Calling functions taking object by value
+  {
+    std::vector<int> vec(1000);
+    // consume_v(vec);
+    consume_v(std::move(vec));
+    /*
+     * vec is now in a valid, but unspecified state!
+     * -> See https://stackoverflow.com/a/12095473 for more discussion.
+     */
+    std::for_each(std::begin(vec), std::end(vec),
+                  [](auto i) { std::cout << i << "\n"; });
   }
 }
