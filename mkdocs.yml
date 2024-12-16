@@ -17,8 +17,8 @@ site_url: https://axelkrypton.github.io/Cpp-user-group-meeting/  # Trailing slas
 nav:
   - Overview: index.md
   - Calendar:
-    - 2024: 2024.md
     - 2025: 2025.md
+    - 2024: 2024.md
 
 
 markdown_extensions: # Just in alphabetical order, checkout reference to know what is for what
