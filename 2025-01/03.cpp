@@ -23,6 +23,13 @@
  * -----------------------------------------------------------------------------
  * 1. C++11 introduced rvalue references. Distinguish between rvalue references
  *    and forwarding (universal) references.
+ * 2. Implement the special member functions of a class handling a resource
+ *    and having a raw pointer to the resource as private member. The copy
+ *    constructor can be implemented using the copy-and-swap idiom which offers
+ *    a strong-exception guarantee. This is also a potential performance loss,
+ *    though. Useful references:
+ *     -> Longer discussion: https://stackoverflow.com/a/3279550/14967071
+ *     -> Interesting link: https://www.slideshare.net/slideshow/howard-hinnant-accu2014/41073148#53
  */
 
 // Taken from https://stackoverflow.com/a/56766138/14967071
@@ -68,7 +75,6 @@ void print_uref_type(T&& param) {
   std::cout << std::setw(40) << "print(std::forward<T>(param)) -> ";
   print(std::forward<T>(param));
 }
-
 
 int main() {
   // (1): What do you expect?
