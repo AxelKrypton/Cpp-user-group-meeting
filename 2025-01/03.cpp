@@ -1,7 +1,7 @@
 /*
  *===================================================
  *
- *    Copyright (c) 2024
+ *    Copyright (c) 2025
  *      Alessandro Sciarra
  *
  *    GNU General Public License (GPLv3 or later)
@@ -59,19 +59,16 @@ void print_rref_type(int&& N) {
   print(std::move(N));
 }
 
-class Container {
- public:
-  Container(std::vector<int> v) : vec{std::move(v)} {}
-  void print() { std::cout << "vec[0] =  " << vec[0] << "\n"; }
-
- private:
-  std::vector<int> vec{};
-};
-
-void consume_v(std::vector<int> v) {
-  Container c{std::move(v)};
-  c.print();
+template <typename T>
+void print_uref_type(T&& param) {
+  std::cout << std::setw(40) << "print(param) -> ";
+  print(param);
+  std::cout << std::setw(40) << "print(std::move(param)) -> ";
+  print(std::move(param));
+  std::cout << std::setw(40) << "print(std::forward<T>(param)) -> ";
+  print(std::forward<T>(param));
 }
+
 
 int main() {
   // (1): What do you expect?
@@ -79,20 +76,13 @@ int main() {
     std::cout << "print_rref_type(123):\n";
     print_rref_type(123);
     int value = 222;
-    std::cout << "print_rref_type(value):\n";
+    std::cout << "\nprint_rref_type(value):\n";
     print_rref_type(std::move(value));
-  }
 
-  // (2): Calling functions taking object by value
-  {
-    std::vector<int> vec(1000);
-    // consume_v(vec);
-    consume_v(std::move(vec));
-    /*
-     * vec is now in a valid, but unspecified state!
-     * -> See https://stackoverflow.com/a/12095473 for more discussion.
-     */
-    std::for_each(std::begin(vec), std::end(vec),
-                  [](auto i) { std::cout << i << "\n"; });
+    int N{42};
+    std::cout << "\nprint_uref_type(N):\n";
+    print_uref_type(N);
+    std::cout << "\nprint_uref_type(666):\n";
+    print_uref_type(666);
   }
 }
