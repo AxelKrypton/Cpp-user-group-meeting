@@ -3,6 +3,10 @@ hide:
  - toc
 ---
 
+!!! danger "All good things come to an end!"
+
+    Due to staff changes in the Z02 project of the CRC-TR 211 collaboration, this C++ user group meeting series has been sadly suspended till further notice at the end of 2025.
+
 ![CppLogo](images/CppLogo.png){ width="15%", align=right }
 
 ## The meetings format
@@ -19,7 +23,7 @@ Format adjustments might be done according to participants wishes.
 
 ## Important information
 
-This series of meetings is offered in the context of the [CRC-TR211](https://itp.uni-frankfurt.de/~strongmatter/) collaboration and, in particular, by the Z02 project.
+This series of meetings is offered in the context of the [CRC-TR 211](https://itp.uni-frankfurt.de/~strongmatter/) collaboration and, in particular, by the Z02 project.
 Topics will be chosen on the way and according to attendees' needs.
 
  - **Day and time:** Every last Monday of the month, normally at 16:30
